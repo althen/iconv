@@ -3,7 +3,7 @@ package iconv
 import "io"
 import "fmt"
 
-func convName(name) string {
+func convName(name string) string {
 	if name == "utf-8" {
 		return UTF8
 	}
