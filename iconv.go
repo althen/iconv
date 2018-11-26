@@ -1,9 +1,11 @@
 package iconv
 
 import "io"
+import "fmt"
 
 // ConvertString ...
 func ConvertString(input string, fromEncoding string, toEncoding string) (string, error) {
+	fmt.Println(fromEncoding, toEncoding)
 	converter, err := NewConverter(fromEncoding, toEncoding)
 	if err != nil {
 		return "", err
