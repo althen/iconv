@@ -1,13 +1,11 @@
 package iconv
 
 import "io"
-import "fmt"
 
 func convName(name string) string {
 	if name == "utf-8" {
 		return UTF8
 	}
-
 	if name == "gb18030" {
 		return GB18030
 	}
@@ -16,7 +14,6 @@ func convName(name string) string {
 
 // ConvertString ...
 func ConvertString(input string, fromEncoding string, toEncoding string) (string, error) {
-	fmt.Println(fromEncoding, toEncoding)
 	converter, err := NewConverter(convName(fromEncoding), convName(toEncoding))
 	if err != nil {
 		return "", err
